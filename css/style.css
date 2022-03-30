@@ -312,28 +312,51 @@ a:hover {
   margin-right: 50px;
 }
 
+
 .card {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
   transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
   transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   position: relative;
 }
 
 .htmlcard-content {
   list-style: circle;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .csscard-content {
   list-style: circle;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .jscard-content {
   list-style: circle;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
@@ -343,7 +366,9 @@ a:hover {
 }
 
 .frontface {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -351,6 +376,7 @@ a:hover {
   background-image: url(/cv/img/html-5.png);
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: white;
 }
@@ -359,6 +385,7 @@ a:hover {
   background-image: url(/cv/img/css.png);
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: white;
 }
@@ -367,11 +394,13 @@ a:hover {
   background-image: url(/cv/img/java-script.png);
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: white;
 }
 
 .flip {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
@@ -380,13 +409,25 @@ a:hover {
 }
 
 .card:active {
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
   transform: scale(0.97);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .card_js:hover {
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
   transform: scale(0.97);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
   transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .section-contacts-skills-right {
