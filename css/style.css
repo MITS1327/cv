@@ -1,0 +1,528 @@
+@font-face {
+	font-family: 'Open Sans';
+	src: url('OpenSans-Bold.eot');
+	src: local('Open Sans Bold'), local('OpenSans-Bold'),
+		url('/fonts/OpenSans-Bold.woff') format('woff'),
+		url('/fonts/OpenSans-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('OpenSans-Regular.eot');
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+		url('/fonts/OpenSans-Regular.woff') format('woff'),
+		url('/fonts/OpenSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('OpenSans-SemiBold.eot');
+	src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+		url('/fonts/OpenSans-SemiBold.woff') format('woff'),
+		url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'sans-serif';
+    background-color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: aquamarine;
+}
+
+/* header styles */
+
+.header {
+  display: flex;
+  background-color: darkslateblue;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 3px solid azure;
+  height: 150px;
+}
+
+.container {
+  max-width: 1206px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-container {
+  display: flex;
+}
+
+.header-heading {
+  color: #F5F5F5;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* section hero styles */
+
+.section-hero {
+  display: flex;
+}
+
+.section-hero-left {
+  padding-right: 40px;
+  background-color: darkslateblue;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.hero-img {
+  border-radius: 100%;
+  max-width: 300px;
+  padding-top: 20px;
+}
+
+.hero-heading {
+  color: white;
+  padding-left: 40px;
+  font-weight: 700;
+}
+
+.section-hero-right {
+  padding-left: 20px;
+}
+
+.hero-right-content {
+  max-width: 800px;
+  line-height: 2;
+}
+
+/*superman-styles*/
+
+#superman {
+  height: 100px;
+  width: 70px;
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 28px;
+}
+
+@keyframes superman-stance {
+  from {
+    top: 0;
+  }
+  to {
+    top: -5px;
+  }
+}
+
+@keyframes shadow {
+  from {
+    width: 85px;
+  }
+  to {
+    width: 80px;
+    left:  -3.5px;
+  }
+}
+
+#superman .stance {
+  visibility: hidden;
+  background-image: url("/img/state.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  animation-name: superman-stance;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+#superman .attack {
+  visibility: hidden;
+  background-image: url("/img/attack.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+#superman.idle .stance {
+  visibility: visible;
+}
+
+#superman.attack .attack {
+  visibility: visible;
+  top: -5px;
+}
+
+#superman .shadow {
+  background-image: url("/img/shadow.png");
+  width: 80px;
+  height: 20px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  left: -6px;
+  bottom: -10px;
+  z-index: 1;
+  animation-name: shadow;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+#superman.attack .shadow {
+  animation-name: none;
+  width: 70px;
+}
+
+@keyframes laser {
+  from {
+    width: 30px;
+  }
+  to {
+    width: 480px;
+  }
+}
+
+#superman .laser {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  left: 42px;
+  top: -14px;
+  background-image: url("/img/laser.png");
+  animation-name: laser;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#superman .laser::after {
+  content: " ";
+  width: 3px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  position: absolute;
+  background-color: #ffe500;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 2px #ffe500;
+}
+/* section contacts skills styles */
+
+.section-contacts-skills {
+  display: flex;
+}
+
+.section-contacts-skills-left {
+  padding-right: 40px;
+  background-color: darkslateblue;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.contacts-skills-left-heading {
+  color: white;
+  padding-right: 194px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-li:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.mobile-link {
+  color: white;
+  background-image: url(/img/outgoing-call.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  padding-left: 30px;
+}
+
+.email-link {
+  color: white;
+  background-image: url(/img/mail.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  padding-left: 30px;
+}
+
+.github-link {
+  color: white;
+  background-image: url(/img/github_icon-icons.com_65450.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  padding-left: 30px;
+}
+
+.section-contacts-skills-right {
+
+}
+
+.contacts-skills-right-heading {
+  padding-left: 30px;
+}
+
+.skills-card-list {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.skills-li {
+  cursor: pointer;
+}
+
+.skills-li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.card {
+  transform: scale(1);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.htmlcard-content {
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+}
+
+.csscard-content {
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+}
+
+.jscard-content {
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+}
+
+.backface {
+  height: 200px;
+  width: 200px;
+}
+
+.frontface {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.backface-html {
+  background-image: url(/img/html-5.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-color: white;
+}
+
+.backface-css {
+  background-image: url(/img/css.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-color: white;
+}
+
+.backface-js {
+  background-image: url(/img/java-script.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  backface-visibility: hidden;
+  background-color: white;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.card_js {
+  max-height: 200px;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.card_js:hover {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.section-contacts-skills-right {
+  padding-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  background-color: darkslateblue;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 3px solid azure;
+  height: 150px;
+}
+
+.footer-heading {
+  color: white;
+}
+
+.footer-list {
+  display: flex;
+  align-items: center;
+}
+
+.footer-li {
+  color: white;
+}
+
+.footer-li:not(:last-child) {
+  margin-right: 20px;
+}
+
+@media (max-width: 800px) {
+  .skills-li:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-heading {
+    font-size: large;
+  }
+
+  #superman.attack .attack {
+    visibility: visible;
+    top: -18px;
+  }
+
+  @keyframes laser {
+    from {
+      width: 30px;
+    }
+    to {
+      width: 300px;
+    }
+  }
+
+  .hero-img {
+    border-radius: 0%;
+    max-width: 100px;
+    max-height: 100px;
+    padding-top: 20px;
+  }
+
+  .hero-heading {
+    color: white;
+    padding-left: 10px;
+    font-size: medium;
+  }
+
+  .section-contacts-skills-left {
+    padding-right: 10px;
+    background-color: darkslateblue;
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+
+  .contacts-skills-left-heading {
+    color: white;
+    padding-right: 40px;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .contacts-li {
+    font-size: small;
+  }
+
+  .mobile-link {
+    color: white;
+    background-image: url(/img/outgoing-call.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    padding-left: 19px;
+  }
+
+  .email-link {
+    color: white;
+    background-image: url(/img/mail.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    padding-left: 19px;
+  }
+
+  .github-link {
+    color: white;
+    background-image: url(/img/github_icon-icons.com_65450.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+    padding-left: 19px;
+  }
+
+  .skills-li:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .htmlcard-content {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .csscard-content {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jscard-content {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+}
